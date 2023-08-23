@@ -1,7 +1,11 @@
 import { useState } from "react";
-import { Nav } from "./components/Nav";
+import { Nav } from "./components/Nav/Nav";
 import axios from "axios";
 import Cards from "./components/Cards.jsx";
+import { Route, Routes } from "react-router-dom";
+import About from "./views/About/About";
+import Detail from "./views/Detail/Detail";
+import Error from "./views/Error/Error";
 
 import "./App.css";
 
@@ -51,7 +55,16 @@ function App() {
   return (
     <div className="App">
       <Nav onSearch={onSearch} random={random} />
-      <Cards characters={characters} onClose={onClose} />
+
+      <Routes>
+        <Route
+          path="/"
+          element={<Cards characters={characters} onClose={onClose} />}
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
     </div>
   );
 }
