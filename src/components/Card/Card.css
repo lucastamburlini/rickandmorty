@@ -1,9 +1,18 @@
 .card {
   max-width: 350px;
   border: 1px solid black;
-
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card img {
   width: 190px;
+}
+
+.card h2 {
+  font-size: 18px;
+  padding: 15px;
 }

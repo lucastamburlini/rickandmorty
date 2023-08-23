@@ -10,12 +10,14 @@ export default function Card({ character, onClose }) {
         X
       </button>
       <div>
-        <h2>Name: {character.name}</h2>
-        <h3>Species: {character.species}</h3>
-        <h3>Gender: {character.gender}</h3>
+        <h2>{character.name}</h2>
       </div>
       <div>
         <img src={character.image} alt={character.name} />
+      </div>
+      <div>
+        <p>Gender: {character.gender}</p>
+        <p>Species: {character.species}</p>
       </div>
     </div>
   );

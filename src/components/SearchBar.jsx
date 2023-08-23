@@ -13,8 +13,14 @@ export default function SearchBar({ onSearch, random }) {
   return (
     <div>
       <input type="search" value={id} onChange={handleChange} />
-      <button onClick={() => onSearch(id)}>Agregar</button>
-      <button onClick={random}>Personaje aleatorio</button>
+      <button
+        onClick={() => {
+          onSearch(id);
+        }}
+      >
+        Add character
+      </button>
+      <button onClick={random}>Random character</button>
     </div>
   );
 }

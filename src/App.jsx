@@ -14,15 +14,15 @@ function App() {
     );
 
     if (!characterExists) {
-      axios(`https://rickandmortyapi.com/api/character/${id}`).then(
-        ({ data }) => {
-          if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
-          } else {
-            window.alert("¡No hay personajes con este ID!");
-          }
+      axios(
+        `https://rym2-production.up.railway.app/api/character/${id}?key=henrym-lucastamburlini`
+      ).then(({ data }) => {
+        if (data.name) {
+          setCharacters((oldChars) => [...oldChars, data]);
+        } else {
+          window.alert("¡No hay personajes con este ID!");
         }
-      );
+      });
     } else {
       alert("¡El personaje ya existe!");
     }
@@ -36,21 +36,13 @@ function App() {
   }
 
   function random() {
-    let numRandom = Math.ceil(Math.random() * 826);
+    let numRandom = (Math.random() * 826).toFixed();
     const characterExists = characters.find(
       (character) => character.id === parseInt(numRandom)
     );
 
     if (!characterExists) {
-      axios(`https://rickandmortyapi.com/api/character/${numRandom}`).then(
-        ({ data }) => {
-          if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
-          } else {
-            window.alert("¡No hay personajes con este ID!");
-          }
-        }
-      );
+      onSearch(numRandom);
     } else {
       alert("¡El personaje ya existe!");
     }
@@ -58,7 +50,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav onSearch={onSearch} characters={characters} random={random} />
+      <Nav onSearch={onSearch} random={random} />
       <Cards characters={characters} onClose={onClose} />
     </div>
   );
