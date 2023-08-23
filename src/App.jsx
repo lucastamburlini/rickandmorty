@@ -1,8 +1,9 @@
 import { useState } from "react";
-import "./App.css";
-import Cards from "./components/Cards.jsx";
 import { Nav } from "./components/Nav";
 import axios from "axios";
+import Cards from "./components/Cards.jsx";
+
+import "./App.css";
 
 function App() {
   const [characters, setCharacters] = useState([]);
