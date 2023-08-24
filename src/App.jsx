@@ -1,16 +1,58 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Nav } from "./components/Nav/Nav";
 import axios from "axios";
 import Cards from "./components/Cards/Cards.jsx";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import About from "./views/About/About";
 import Detail from "./views/Detail/Detail";
 import Error from "./views/Error/Error";
 
 import "./App.css";
+import Login from "./views/Login/Login";
 
 function App() {
   const [characters, setCharacters] = useState([]);
+  const [access, setAccess] = useState(false);
+
+  const EMAIL = "ejemplo@gmail.com";
+  const PASSWORD = "123456";
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  function login(userData) {
+    if (userData.password === PASSWORD && userData.email === EMAIL) {
+      setAccess(true);
+      navigate("/home");
+    }
+  }
+
+  function loginOut() {
+    setAccess(false);
+    navigate("/");
+  }
+
+  useEffect(() => {
+    !access && navigate("/");
+  }, [access]);
+
+  /* Code that does not allow backtracking --------------- */
+  useEffect(() => {
+    if (!access) {
+      // Bloquear navegación hacia atrás
+      window.history.pushState(null, null, "/");
+      window.addEventListener("popstate", navigateHome);
+
+      return () => {
+        window.removeEventListener("popstate", navigateHome);
+      };
+    }
+  }, [access]);
+
+  function navigateHome() {
+    navigate("/");
+  }
+  /* Code that does not allow backtracking --------------- */
 
   function onSearch(id) {
     const characterExists = characters.find(
@@ -54,17 +96,21 @@ function App() {
 
   return (
     <div className="App">
-      <Nav onSearch={onSearch} random={random} />
-
-      <Routes>
-        <Route
-          path="/"
-          element={<Cards characters={characters} onClose={onClose} />}
-        />
-        <Route path="/about" element={<About />} />
-        <Route path="/detail/:id" element={<Detail />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      {location.pathname !== "/" && (
+        <Nav onSearch={onSearch} random={random} loginOut={loginOut} />
+      )}
+      <>
+        <Routes>
+          <Route path="/" element={<Login login={login} />} />
+          <Route
+            path="/home"
+            element={<Cards characters={characters} onClose={onClose} />}
+          />
+          <Route path="/about" element={<About />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </>
     </div>
   );
 }
