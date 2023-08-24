@@ -4,10 +4,7 @@ export default function SearchBar({ onSearch, random }) {
   const [id, setId] = useState("");
 
   const handleChange = (e) => {
-    e.preventDefault();
-    const input = e.target.value;
-
-    setId(input);
+    setId(e.target.value);
   };
 
   return (

@@ -1,8 +1,7 @@
+import "./error.css";
 
 const Error = () => {
-  return (
-    <div>Error</div>
-  )
-}
+  return <div>Error 404</div>;
+};
 
-export default Error
+export default Error;

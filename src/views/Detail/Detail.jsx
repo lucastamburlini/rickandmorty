@@ -4,7 +4,7 @@ import axios from "axios";
 
 const Detail = () => {
   const { id } = useParams();
-  const [character, setCharacter] = useState([]);
+  const [character, setCharacter] = useState({});
 
   useEffect(() => {
     axios(

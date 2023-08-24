@@ -2,8 +2,20 @@
   display: flex;
   width: 100%;
   backdrop-filter: blur(10px);
-  position: fixed;
   justify-content: center;
   align-items: center;
   padding: 20px 0;
 }
+
+.nav img {
+  width: 180px;
+}
+
+.nav a {
+  font-family: var(--main-font);
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 24px;
+}
+
+

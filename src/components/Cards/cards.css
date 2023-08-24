@@ -1,0 +1,10 @@
+.listsCards {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.cantainer-card {
+  gap: 20px;
+  flex-wrap: wrap;
+}
