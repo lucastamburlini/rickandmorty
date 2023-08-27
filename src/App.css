@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-family: var(--secondary-font);
 }
 
 :root {
@@ -10,7 +11,9 @@ body {
   --bg-offset: #fafafa;
   --main-text-color: #ffffff;
   --secondary-text-color: #000000;
+  --warning-color: #FD201E;
   --main-font: "Creepster", cursive;
+  --secondary-font: "Roboto", sans-serif;
 }
 
 .App {
@@ -35,3 +38,27 @@ body {
   align-items: center;
   text-align: center;
 }
+
+.button-gradient {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background-size: 120% auto;
+  background-image: linear-gradient(315deg, #43cea2 0%, #185a9d 75%);
+}
+.button-gradient:hover {
+  background-position: right center;
+}
+.button-gradient:active {
+  top: 2px;
+}
+

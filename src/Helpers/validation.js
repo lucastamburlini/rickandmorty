@@ -7,19 +7,19 @@ export const validation = (props) => {
 
 
     if (!regexEmail.test(props.email)) {
-        errors.email = "The user must be an email address.";
+        errors.email = "Invalid email";
     }
 
     if (props.email.length > 35) {
-        errors.email = "The username cannot have more than 35 characters.";
+        errors.email = "No more than 35 characters";
     }
 
     if (!props.email) {
-        errors.email = "The username cannot be empty.";
+        errors.email = "Enter your email";
     }
 
     if (props.password.length < 6 || props.password.length > 10) {
-        errors.password = "The password must have a length between 6 and 10 characters."
+        errors.password = "Password length: 6-10 characters"
     }
 
     return errors;

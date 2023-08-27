@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { validation } from "../../Helpers/validation";
 
-const Form = ({ login }) => {
+import "./form.css";
+
+const Form = ({ handleLogin }) => {
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -29,29 +31,34 @@ const Form = ({ login }) => {
   const handleSubmit = (e) => {
     e.preventDefault(userData);
     if (!errors.email && !errors.password) {
-      login(userData);
+      handleLogin(userData);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Email:</label>
+    <form onSubmit={handleSubmit} className="form">
+         <img src="./src/assets/rick_and_morty.png" alt="rick_and_morty" />
+      <label>Email</label>
       <input
         type="email"
         name="email"
         onChange={handleChange}
         value={userData.email}
       />
-      <p>{errors.email}</p>
-      <label>Password:</label>
+      <div className="warning">
+        <span>{errors.email}</span>
+      </div>
+      <label>Password</label>
       <input
         type="password"
         name="password"
         onChange={handleChange}
         value={userData.password}
       />
-      <p>{errors.password}</p>
-      <button type="submit">Submit</button>
+      <div className="warning">
+        <span>{errors.password}</span>
+      </div>
+      <button className="button-gradient" type="submit">Submit</button>
     </form>
   );
 };

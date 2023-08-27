@@ -1,9 +1,11 @@
 import Form from "../../components/Form/Form";
 
-const Login = ({ login }) => {
+import './login.css'
+
+const Login = ({ handleLogin }) => {
   return (
-    <div>
-      <Form login={login} />
+    <div className="login">
+      <Form handleLogin={handleLogin} />
     </div>
   );
 };

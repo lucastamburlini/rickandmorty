@@ -20,14 +20,14 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  function login(userData) {
+  function handleLogin(userData) {
     if (userData.password === PASSWORD && userData.email === EMAIL) {
       setAccess(true);
       navigate("/home");
     }
   }
 
-  function loginOut() {
+  function handleLogout() {
     setAccess(false);
     navigate("/");
   }
@@ -47,6 +47,7 @@ function App() {
         window.removeEventListener("popstate", navigateHome);
       };
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [access]);
 
   function navigateHome() {
@@ -66,11 +67,11 @@ function App() {
         if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
         } else {
-          window.alert("¡No hay personajes con este ID!");
+          window.alert("There aren't characters with this id!");
         }
       });
     } else {
-      alert("¡El personaje ya existe!");
+      alert("The character already exists!");
     }
   }
 
@@ -97,11 +98,11 @@ function App() {
   return (
     <div className="App">
       {location.pathname !== "/" && (
-        <Nav onSearch={onSearch} random={random} loginOut={loginOut} />
+        <Nav onSearch={onSearch} random={random} handleLogout={handleLogout} />
       )}
       <>
         <Routes>
-          <Route path="/" element={<Login login={login} />} />
+          <Route path="/" element={<Login handleLogin={handleLogin} />} />
           <Route
             path="/home"
             element={<Cards characters={characters} onClose={onClose} />}
