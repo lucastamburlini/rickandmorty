@@ -1,0 +1,6 @@
+.about-container {
+  background-color: aliceblue;
+  width: 100%;
+  height: auto;
+  color: var(--secondary-text-color);
+}

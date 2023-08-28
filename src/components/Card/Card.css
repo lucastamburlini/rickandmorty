@@ -1,25 +1,87 @@
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 230px;
-  height: auto;
-  background-color: var(--bg-offset);
-  color: var(--secondary-text-color);
+  max-width: 260px;
+  height: 450px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--primary-text-color);
   position: relative;
+  text-align: start;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .card img {
   width: 100%;
+  object-fit: cover;
 }
 
-.card h2 {
-  font-size: 18px;
+.card-info {
+  height: 100%;
+  padding: 8px 16px;
+  display: grid;
+  grid-template-rows: 40% 30% 30%;
+}
+
+.card-info h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.card-info p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.card-info button {
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: var(--primary-text-color);
+  font-weight: 700;
+  padding: 10px 0 5px 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card-info button:hover {
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.card-info button svg {
+  width: 20px;
+  padding-left: 5px;
+  transform: translateX(0); /* Inicialmente no desplazado */
+  transition: transform 0.3s ease; /* Transición solo para transform */
+}
+
+.card-info button:hover svg {
+  transform: translateX(5px); /* Mueve el ícono hacia la derecha en hover */
 }
 
 .close-botton {
+  height: 24px;
+  width: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50px;
+  border: none;
+  color: var(--primary-text-color);
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.close-botton:hover {
+  color: var(--warning-color);
+  transform: scale(1.1, 1.1);
 }

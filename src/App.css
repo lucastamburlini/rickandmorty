@@ -8,7 +8,7 @@ body {
 :root {
   --primary-color: #40b5cb;
   --secondary-color: #9bbb3f;
-  --bg-offset: #fafafa;
+  --bg-offset: #010101;
   --main-text-color: #ffffff;
   --secondary-text-color: #000000;
   --warning-color: #FD201E;
@@ -40,7 +40,7 @@ body {
 }
 
 .button-gradient {
-  min-width: 130px;
+  min-width: 120px;
   height: 40px;
   color: #fff;
   padding: 5px 10px;

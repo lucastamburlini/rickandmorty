@@ -91,7 +91,7 @@ function App() {
     if (!characterExists) {
       onSearch(numRandom);
     } else {
-      alert("¡El personaje ya existe!");
+      alert("The character already exists!");
     }
   }
 
