@@ -13,6 +13,7 @@ export const Nav = ({ onSearch, random, handleLogout }) => {
         </NavLink>
         <NavLink to="/home">Home</NavLink>
         <NavLink to="/about">About</NavLink>
+        <NavLink to="/favorites">Favorites</NavLink>
         <SearchBar onSearch={onSearch} random={random} />
         <button className="LogoutIcon" onClick={handleLogout}>
           <LogoutIcon />

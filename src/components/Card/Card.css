@@ -64,6 +64,12 @@
   transform: translateX(5px); /* Mueve el ícono hacia la derecha en hover */
 }
 
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+
 .close-botton {
   height: 24px;
   width: 24px;
@@ -85,3 +91,4 @@
   color: var(--warning-color);
   transform: scale(1.1, 1.1);
 }
+

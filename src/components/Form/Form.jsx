@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { validation } from "../../Helpers/validation";
+import { validation } from "../../helpers/validation";
 
 import "./form.css";
 

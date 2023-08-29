@@ -6,9 +6,10 @@ import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import About from "./views/About/About";
 import Detail from "./views/Detail/Detail";
 import Error from "./views/Error/Error";
+import Login from "./views/Login/Login";
+import Favorites from "./components/Favorites";
 
 import "./App.css";
-import Login from "./views/Login/Login";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -47,7 +48,7 @@ function App() {
         window.removeEventListener("popstate", navigateHome);
       };
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [access]);
 
   function navigateHome() {
@@ -108,6 +109,7 @@ function App() {
             element={<Cards characters={characters} onClose={onClose} />}
           />
           <Route path="/about" element={<About />} />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="*" element={<Error />} />
         </Routes>
