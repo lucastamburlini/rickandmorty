@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import Cards from "./Cards/Cards";
-import { filterCards, orderCards, resetFav } from "../redux/actions/actions";
+import Cards from "../Cards/Cards";
+import { filterCards, orderCards, resetFav } from "../../redux/actions/actions";
+
+import "./favorites.css";
 
 const Favorites = () => {
   const dispatch = useDispatch();
@@ -20,7 +22,7 @@ const Favorites = () => {
 
   return (
     <div>
-      <div>
+      <div className="favorites-container">
         <select placeholder="Order" onChange={handleOrder}>
           {["Upward", "Falling"].map((order) => (
             <option key={order} value={order}>
@@ -35,7 +37,7 @@ const Favorites = () => {
             </option>
           ))}
         </select>
-        <button onClick={handleReset}>Reset</button>
+        <button className="button-gradient" onClick={handleReset}>Reset</button>
       </div>
       <Cards characters={favorites} />
     </div>

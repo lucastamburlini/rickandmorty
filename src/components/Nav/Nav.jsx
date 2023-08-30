@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
-import SearchBar from "../SearchBar";
+import LogoutIcon from "@mui/icons-material/Logout";
+import SearchBar from "../SearchBar/SearchBar";
 
 import "./nav.css";
-import LogoutIcon from "@mui/icons-material/Logout";
 
 export const Nav = ({ onSearch, random, handleLogout }) => {
   return (

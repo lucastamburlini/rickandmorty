@@ -35,6 +35,8 @@ body {
 .container {
   width: 80%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Styles for h1, h2, h3 y p */
@@ -69,6 +71,10 @@ p {
 
   p {
     font-size: var(--base-font-size);
+  }
+
+  a {
+    font-size: calc(var(--base-font-size) * 1.5);
   }
 }
 
