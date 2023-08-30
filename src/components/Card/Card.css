@@ -1,7 +1,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  max-width: 260px;
+  width: 300px;
   height: 450px;
   background-color: rgba(0, 0, 0, 0.8);
   color: var(--primary-text-color);
@@ -24,7 +24,7 @@
 }
 
 .card-info h2 {
-  font-size: 24px;
+  font-size: 20px;
   margin: 0;
 }
 
@@ -44,7 +44,7 @@
   color: var(--primary-text-color);
   font-weight: 700;
   padding: 10px 0 5px 0;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   cursor: pointer;
 }
 
@@ -56,19 +56,18 @@
 .card-info button svg {
   width: 20px;
   padding-left: 5px;
-  transform: translateX(0); /* Inicialmente no desplazado */
-  transition: transform 0.3s ease; /* Transición solo para transform */
+  transform: translateX(0);
+  transition: transform 0.3s ease;
 }
 
 .card-info button:hover svg {
-  transform: translateX(5px); /* Mueve el ícono hacia la derecha en hover */
+  transform: translateX(5px);
 }
 
 .card-footer {
   display: flex;
   justify-content: space-between;
 }
-
 
 .close-botton {
   height: 24px;
@@ -91,4 +90,3 @@
   color: var(--warning-color);
   transform: scale(1.1, 1.1);
 }
-

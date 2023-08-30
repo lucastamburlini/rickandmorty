@@ -1,47 +1,65 @@
 import { useNavigate } from "react-router-dom";
 import { addFav, removeFav } from "../../redux/actions/actions";
-import "./card.css";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import { useEffect, useState } from "react";
-import { connect } from "react-redux";
 
-function Card({ character, onClose, addFav, removeFav, favorites }) {
+import "./card.css";
+
+export default function Card({ character, onClose }) {
   const navigate = useNavigate();
-  const [isFav, setIsFav] = useState(false);
+
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.myFavorites);
+
+  const isCharacterInFavorites = favorites
+    .map((fav) => fav.id)
+    .includes(character.id);
+  const [isFav, setIsFav] = useState(isCharacterInFavorites);
+
+  const [closeBtn, setCloseBtn] = useState(true);
 
   function navigateHandle() {
     navigate(`/detail/${character.id}`);
   }
 
+  useEffect(() => {
+    if (!onClose) {
+      setCloseBtn(!closeBtn);
+    }
+  }, []);
+
   function handleFavorite(data) {
     if (!isFav) {
-      addFav(data);
-      setIsFav(true);
+      dispatch(addFav(data));
     } else {
-      removeFav(data);
-      setIsFav(false);
+      dispatch(removeFav(data.id));
     }
+    setIsFav(!isFav);
   }
 
-  useEffect(() => {
+  /*  useEffect(() => {
     favorites.forEach((fav) => {
       if (fav.id === character.id) {
         setIsFav(true);
       }
     });
-  }, [favorites]);
+  }, [favorites]); */
 
   return (
     <div className="card">
-      <button
-        className="close-botton"
-        onClick={() => {
-          onClose(character.id);
-        }}
-      >
-        <HighlightOffIcon />
-      </button>
+      {closeBtn && (
+        <button
+          className="close-botton"
+          onClick={() => {
+            onClose(character.id);
+          }}
+        >
+          <HighlightOffIcon />
+        </button>
+      )}
 
       <div>
         <img src={character.image} alt={character.name} />
@@ -60,7 +78,7 @@ function Card({ character, onClose, addFav, removeFav, favorites }) {
           </button>
 
           {isFav ? (
-            <button onClick={() => handleFavorite(character.id)}>❤️</button>
+            <button onClick={() => handleFavorite(character)}>❤️</button>
           ) : (
             <button onClick={() => handleFavorite(character)}>🤍</button>
           )}
@@ -70,7 +88,7 @@ function Card({ character, onClose, addFav, removeFav, favorites }) {
   );
 }
 
-const mapDispatchToProps = (dispatch) => {
+/* const mapDispatchToProps = (dispatch) => {
   return {
     addFav: (character) => dispatch(addFav(character)),
     removeFav: (id) => dispatch(removeFav(id)),
@@ -84,3 +102,4 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
+ */

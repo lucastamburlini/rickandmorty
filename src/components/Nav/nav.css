@@ -42,7 +42,7 @@
   border: none;
   color: var(--warning-color);
   cursor: pointer;
-  transition: all 0.4s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .LogoutIcon:hover {
