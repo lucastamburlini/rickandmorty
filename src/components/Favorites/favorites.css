@@ -5,12 +5,12 @@
   justify-content: center;
   align-items: center;
   padding: 20px 0;
+  gap: 10px;
 }
 
 .favorites-container select {
   height: 40px;
   padding: 8px;
-  margin: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: white;

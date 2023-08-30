@@ -11,10 +11,16 @@
   width: 50px;
 }
 
+
 .nav a {
   font-family: var(--main-font);
-  color: var(--primary-color);
+  color: var(--secondary-color);
   text-decoration: none;
+  transition: all 0.2s ease-out;
+}
+
+.nav a:hover {
+  color: var(--primary-color);
 }
 
 .LogoutIcon {

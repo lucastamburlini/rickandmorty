@@ -37,7 +37,7 @@ const Favorites = () => {
             </option>
           ))}
         </select>
-        <button className="button-gradient" onClick={handleReset}>Reset</button>
+        <button className="button" onClick={handleReset}>Reset</button>
       </div>
       <Cards characters={favorites} />
     </div>
