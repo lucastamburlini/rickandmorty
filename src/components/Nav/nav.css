@@ -15,7 +15,6 @@
   font-family: var(--main-font);
   color: var(--primary-color);
   text-decoration: none;
-  font-size: 24px;
 }
 
 .nav .search {
@@ -29,7 +28,6 @@
   font-family: var(--main-font);
   color: var(--primary-color);
   text-decoration: none;
-  font-size: 24px;
   border: none;
   background-color: transparent;
   cursor: pointer;

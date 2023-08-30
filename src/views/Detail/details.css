@@ -1,0 +1,33 @@
+.card-detail-container {
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 30px 15px;
+  margin: 20px auto 20px auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  overflow: hidden;
+  gap: 20px;
+}
+
+.card-detail-container img {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .card-detail-container {
+    width: 70%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card-detail-container {
+    width: 60%;
+  }
+}

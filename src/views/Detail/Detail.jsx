@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+import './details.css'
+
 const Detail = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState({});
@@ -19,7 +21,23 @@ const Detail = () => {
     return setCharacter({});
   }, [id]);
 
-  return <div>{character.name}</div>;
+  return (
+    <div className="card-detail-container">
+      <div>
+        <img src={character.image} alt={character.name} />
+      </div>
+      <div className="card-detail-info">
+        <h2>Name: {character.name}</h2>
+        <h3>ID: {character.id}</h3>
+        <p>Status: {character.status}</p>
+        <p>Species: {character.species}</p>
+        <p>Type: {character.type}</p>
+        <p>Gender: {character.gender}</p>
+        <p>Location: {character.location?.name}</p>
+        <p>Origin: {character.origin?.name}</p>
+      </div>
+    </div>
+  );
 };
 
 export default Detail;
