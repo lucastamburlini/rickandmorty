@@ -7,9 +7,9 @@ import About from "./views/About/About";
 import Detail from "./views/Detail/Detail";
 import Error from "./views/Error/Error";
 import Login from "./views/Login/Login";
+import Favorites from "./components/Favorites/Favorites";
 
 import "./App.css";
-import Favorites from "./components/Favorites/Favorites";
 
 function App() {
   const [characters, setCharacters] = useState([]);

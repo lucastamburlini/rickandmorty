@@ -39,9 +39,9 @@ body {
   align-items: center;
 }
 
-/* Styles for h1, h2, h3 y p */
+/* Styles for h1, h2, h3, and p */
 h1 {
-  font-size: calc(var(--base-font-size) * 1.5);
+  font-size: 24px; 
 }
 
 h2 {
@@ -58,23 +58,23 @@ p {
 
 @media screen and (min-width: 758px) {
   h1 {
-    font-size: calc(var(--base-font-size) * 2);
+    font-size: 32px; 
   }
 
   h2 {
-    font-size: calc(var(--base-font-size) * 1.5);
+    font-size: 24px; 
   }
 
   h3 {
-    font-size: calc(var(--base-font-size) * 1.25);
+    font-size: 22px;
   }
 
   p {
-    font-size: var(--base-font-size);
+    font-size: 16px;
   }
 
   a {
-    font-size: calc(var(--base-font-size) * 1.5);
+    font-size: 24px; 
   }
 }
 
