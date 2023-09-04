@@ -17,8 +17,8 @@ export default function Card({ character, onClose }) {
   const isCharacterInFavorites = favorites
     .map((fav) => fav.id)
     .includes(character.id);
-  const [isFav, setIsFav] = useState(isCharacterInFavorites);
 
+  const [isFav, setIsFav] = useState(isCharacterInFavorites);
   const [closeBtn, setCloseBtn] = useState(true);
 
   function navigateHandle() {
