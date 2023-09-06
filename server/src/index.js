@@ -1,6 +1,6 @@
-const http = require("http")
-const character = require("./utils/data")
-const PORT = 3001
+const http = require("http");
+const character = require("./utils/data");
+const PORT = 3001;
 
 http.createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
