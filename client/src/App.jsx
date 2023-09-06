@@ -60,17 +60,18 @@ function App() {
     const characterExists = characters.find(
       (character) => character.id === parseInt(id)
     );
+    // `https://rym2-production.up.railway.app/api/character/${id}?key=henrym-lucastamburlini`
 
     if (!characterExists) {
-      axios(
-        `https://rym2-production.up.railway.app/api/character/${id}?key=henrym-lucastamburlini`
-      ).then(({ data }) => {
-        if (data.name) {
-          setCharacters((oldChars) => [...oldChars, data]);
-        } else {
-          window.alert("There aren't characters with this id!");
+      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
+        ({ data }) => {
+          if (data.name) {
+            setCharacters((oldChars) => [...oldChars, data]);
+          } else {
+            window.alert("There aren't characters with this id!");
+          }
         }
-      });
+      );
     } else {
       alert("The character already exists!");
     }

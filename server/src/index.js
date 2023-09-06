@@ -1,5 +1,6 @@
 const http = require("http")
 const character = require("./utils/data")
+const PORT = 3001
 
 http.createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -11,8 +12,7 @@ http.createServer((req, res) => {
             character => character.id === Number(urlId)
         )
         res.writeHead(200, {
-            "content-type": "text/html",
-        });
-        res.end(JSON.stringify(found));
+            "Content-Type": "application/json",
+        }).end(JSON.stringify(found));
     }
-}).listen(3001)
+}).listen(PORT)

@@ -2,22 +2,23 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-import './details.css'
+import "./details.css";
 
 const Detail = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState({});
 
   useEffect(() => {
-    axios(
-      `https://rym2-production.up.railway.app/api/character/${id}?key=henrym-lucastamburlini`
-    ).then(({ data }) => {
-      if (data.name) {
-        setCharacter(data);
-      } else {
-        window.alert("No hay personajes con ese ID");
+    //`https://rym2-production.up.railway.app/api/character/${id}?key=henrym-lucastamburlini`
+    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
+      ({ data }) => {
+        if (data.name) {
+          setCharacter(data);
+        } else {
+          window.alert("No hay personajes con ese ID");
+        }
       }
-    });
+    );
     return setCharacter({});
   }, [id]);
 
