@@ -3,7 +3,7 @@ const axios = require("axios")
 
 const getCharById = (req, res) => {
     const { id } = req.params
-    axios(`${URL} / ${id}`)
+    axios(`${URL}/${id}`)
         .then((response) => response.data)
         .then(({ id, status, name, species, origin, image, gender }) => {
             if (name) {
@@ -17,10 +17,14 @@ const getCharById = (req, res) => {
                     gender
                 }
                 res.status(200).json(character)
+            } else {
+                res.status(response.status).send('Character not found');
             }
-            return res.status(404).send('Not fount')
         })
-        .catch(error => res.status(500).send(error.message))
+        .catch((error) => {
+            console.error(error);
+            res.status(500).send(error.message);
+        });
 }
 
 

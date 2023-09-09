@@ -7,21 +7,20 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     let sorted;
-    
+
     switch (action.type) {
         case ADD_FAV:
             return {
                 ...state,
-                myFavorites: [...state.myFavorites, action.payload],
-                allCharacters: [...state.myFavorites, action.payload]
-            }
+                myFavorites: action.payload,
+                allCharacters: action.payload
+            };
 
         case REMOVE_FAV:
             return {
                 ...state,
-                myFavorites: state.myFavorites.filter((favorite) => favorite.id !== Number(action.payload)),
-                allCharacters: state.myFavorites.filter((favorite) => favorite.id !== Number(action.payload))
-            }
+                myFavorites: action.payload
+            };
 
         case FILTER:
             return {
