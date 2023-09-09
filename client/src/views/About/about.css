@@ -1,10 +1,70 @@
 .about-container {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: auto;
-  color: var(--secondary-text-color);
+  color: var(--main-text-color);
   text-align: center;
   width: 80%;
   margin: 90px auto 20px auto;
   padding: 20px;
+  border-radius: 5px;
+}
+
+.about-handcrafted {
+  font-style: italic;
+}
+
+.about-image {
+  width: 70%;
+  height: 70%;
+  margin: 40px auto 40px auto;
+  border-radius: 10px;
+  background-color: var(--main-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.about-image img {
+  width: 70%;
+}
+
+.about-contact {
+  margin-top: 20px;
+}
+
+.contact-container ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container li {
+  display: flex;
+  justify-content: c;
+  align-items: center;
+}
+
+.contact-container a {
+  text-decoration: none;
+  padding: 10px;
+  display: flex;
+  color: var(--primary-text-color);
+  font-size: 24px;
+  transition: color 0.2s ease-out;
+}
+
+.contact-container a:hover {
+  color: var(--primary-color);
+}
+
+@media screen and (min-width: 768px) {
+  .about-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    text-align: center;
+  }
 }

@@ -1,13 +1,16 @@
-import Contact from "../../components/Contact/Contact";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+
 import "./about.css";
 
 const About = () => {
   return (
     <div className="about-container">
       <div className="about-header">
-        <div className="about-handcrafted">Handcrafted by me</div>
+        <div className="about-handcrafted">Handcrafted by</div>
         <h1 className="about-name">Lucas Tamburlini</h1>
-        <h2 className="about-cohort">cohorte: FT42a</h2>
+        <h2 className="about-cohort">Cohorte: FT42a</h2>
       </div>
       <div className="about-content">
         <p className="about-intro">
@@ -19,19 +22,44 @@ const About = () => {
           <img src="/faviconHenry.ico" alt="Henry" />
         </div>
         <p className="about-description">
-          On my website, you&apos;ll be able to explore and immerse yourself in
-          the fascinating universe of Rick Sanchez and his grandson Morty Smith.
-          I have applied front-end and back-end development skills to create a
-          comprehensive experience, using technologies like React, Node.js, and
-          databases to make it possible. I hope you enjoy exploring my website
-          as much as I enjoyed creating it!
+        On my website, you can explore the world of Rick Sanchez and Morty Smith. I&apos;ve used front-end and back-end development skills, including React, Node.js, and databases, to create a comprehensive experience. I hope you enjoy it as much as I enjoyed creating it!
         </p>
       </div>
       <div className="about-closing">
         <h2 className="about-closing-text">Wubba Lubba Dub Dub!</h2>
       </div>
-      <div>
-        <Contact />
+      <div className="about-contact">
+        <div className="contact-container">
+          <ul>
+            <li>
+              <a
+                href="https://github.com/lucastamburlini"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GitHubIcon />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/lucasgabrieltamburlini/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedInIcon />
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:lucastamburlini@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AlternateEmailIcon />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
