@@ -18,7 +18,7 @@ const getCharById = (req, res) => {
                 }
                 res.status(200).json(character)
             } else {
-                res.status(response.status).send('Character not found');
+                res.status(404).send('Character not found');
             }
         })
         .catch((error) => {
