@@ -18,7 +18,23 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  function handleLogin(userData) {
+  async function handleLogin(userData) {
+    try {
+      const { email, password } = userData;
+      const URL = "http://localhost:3001/rickandmorty/login/";
+      const response = await axios(URL + `?email=${email}&password=${password}`);
+      const { data } = response;
+      if (data) {
+        const { access } = data;
+        setAccess(access);
+        access && navigate("/home");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  /*   function handleLogin(userData) {
     const { email, password } = userData;
     const URL = "http://localhost:3001/rickandmorty/login/";
     axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
@@ -26,7 +42,7 @@ function App() {
       setAccess(access);
       access && navigate("/home");
     });
-  }
+  } */
 
   function handleLogout() {
     setAccess(false);
@@ -56,7 +72,32 @@ function App() {
   }
   /* Code that does not allow backtracking --------------- */
 
-  function onSearch(id) {
+  async function onSearch(id) {
+    try {
+      const characterExists = characters.find(
+        (character) => character.id === parseInt(id)
+      );
+      if (!characterExists) {
+        const response = await axios(
+          `http://localhost:3001/rickandmorty/character/${id}`
+        );
+        const { data } = response;
+        if (data) {
+          if (data.name) {
+            setCharacters((oldChars) => [...oldChars, data]);
+          } else {
+            window.alert("There aren't characters with this id!");
+          }
+        } else {
+          alert("The character already exists!");
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  /* function onSearch(id) {
     const characterExists = characters.find(
       (character) => character.id === parseInt(id)
     );
@@ -75,7 +116,7 @@ function App() {
     } else {
       alert("The character already exists!");
     }
-  }
+  } */
 
   function onClose(id) {
     let borrar = characters.filter((character) => {

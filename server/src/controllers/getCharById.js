@@ -8,15 +8,14 @@ const getCharById = async (req, res) => {
         const { data } = response;
 
         if (data) {
-            const { id, status, name, species, origin, image, gender } = data;
             const character = {
-                id,
-                status,
-                name,
-                species,
-                origin,
-                image,
-                gender
+                id: data.id,
+                status: data.status,
+                name: data.name,
+                species: data.species,
+                origin: data.origin?.name,
+                image: data.image,
+                gender: data.gender
             };
             res.status(200).json(character)
         } else {
@@ -29,6 +28,10 @@ const getCharById = async (req, res) => {
 
     }
 
+}
+
+module.exports = {
+    getCharById
 }
 
 /* const getCharById = (req, res) => {
@@ -58,9 +61,6 @@ const getCharById = async (req, res) => {
 } */
 
 
-module.exports = {
-    getCharById
-}
 
 /* const axios = require("axios")
 
