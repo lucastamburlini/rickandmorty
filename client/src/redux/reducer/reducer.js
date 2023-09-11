@@ -41,7 +41,6 @@ const reducer = (state = initialState, action) => {
                 myFavorites: [...sorted]
             }
 
-
         case RESET:
             return {
                 ...state,

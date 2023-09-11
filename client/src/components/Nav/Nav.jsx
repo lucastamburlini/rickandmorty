@@ -4,7 +4,7 @@ import SearchBar from "../SearchBar/SearchBar";
 
 import "./nav.css";
 
-export const Nav = ({ onSearch, random, handleLogout }) => {
+export const Nav = ({ onSearch, random, handleLogout, handleClear }) => {
   return (
     <div className="nav">
       <div className="container">
@@ -14,7 +14,7 @@ export const Nav = ({ onSearch, random, handleLogout }) => {
         <NavLink to="/home">Home</NavLink>
         <NavLink to="/about">About</NavLink>
         <NavLink to="/favorites">Favorites</NavLink>
-        <SearchBar onSearch={onSearch} random={random} />
+        <SearchBar onSearch={onSearch} random={random} handleClear={handleClear} />
         <button className="LogoutIcon" onClick={handleLogout}>
           <LogoutIcon />
         </button>

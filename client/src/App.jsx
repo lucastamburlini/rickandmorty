@@ -22,7 +22,9 @@ function App() {
     try {
       const { email, password } = userData;
       const URL = "http://localhost:3001/rickandmorty/login/";
-      const response = await axios(URL + `?email=${email}&password=${password}`);
+      const response = await axios(
+        URL + `?email=${email}&password=${password}`
+      );
       const { data } = response;
       if (data) {
         const { access } = data;
@@ -138,10 +140,20 @@ function App() {
     }
   }
 
+  function handleClear() {
+    console.log("Clear button clicked");
+    setCharacters([]);
+  }
+
   return (
     <div className="App">
       {location.pathname !== "/" && (
-        <Nav onSearch={onSearch} random={random} handleLogout={handleLogout} />
+        <Nav
+          onSearch={onSearch}
+          random={random}
+          handleLogout={handleLogout}
+          handleClear={handleClear}
+        />
       )}
       <>
         <Routes>
