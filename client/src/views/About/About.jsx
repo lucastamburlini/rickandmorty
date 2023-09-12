@@ -19,7 +19,7 @@ const About = () => {
           TV show Rick and Morty.
         </p>
         <div className="about-image">
-          <img src="/faviconHenry.ico" alt="Henry" />
+          <img src="../src/assets/rick_and_morty3.png" alt="Henry" />
         </div>
         <p className="about-description">
         On my website, you can explore the world of Rick Sanchez and Morty Smith. I&apos;ve used front-end and back-end development skills, including React, Node.js, and databases, to create a comprehensive experience. I hope you enjoy it as much as I enjoyed creating it!
