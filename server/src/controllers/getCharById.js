@@ -22,12 +22,8 @@ const getCharById = async (req, res) => {
             res.status(404).send('Character not found');
         }
     } catch (error) {
-
-        console.error(error);
         res.status(500).send({ message: error.message });
-
     }
-
 }
 
 module.exports = {
