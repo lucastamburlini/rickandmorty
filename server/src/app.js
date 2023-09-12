@@ -18,7 +18,7 @@ server.use((req, res, next) => {
     );
     next();
 });
-server.use("/rickandmorty", mainRouter)
+server.use("/rickandmorty", mainRouter);
 
 module.exports = server
 
