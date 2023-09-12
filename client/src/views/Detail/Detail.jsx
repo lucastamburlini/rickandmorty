@@ -34,8 +34,8 @@ const Detail = () => {
         <p>Species: {character.species}</p>
         <p>Type: {character.type}</p>
         <p>Gender: {character.gender}</p>
-        <p>Location: {character.location?.name}</p>
-        <p>Origin: {character.origin?.name}</p>
+        <p>Origin: {character.origin}</p>
+        <p>Location: {character.location}</p>
       </div>
     </div>
   );

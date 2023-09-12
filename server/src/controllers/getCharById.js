@@ -10,12 +10,14 @@ const getCharById = async (req, res) => {
         if (data) {
             const character = {
                 id: data.id,
-                status: data.status,
                 name: data.name,
+                status: data.status,
                 species: data.species,
+                type: data.type,
+                gender: data.gender,
                 origin: data.origin?.name,
+                location: data.location?.name,
                 image: data.image,
-                gender: data.gender
             };
             res.status(200).json(character)
         } else {

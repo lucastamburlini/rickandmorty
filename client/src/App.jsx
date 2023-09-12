@@ -32,7 +32,7 @@ function App() {
         access && navigate("/home");
       }
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   }
 
@@ -90,12 +90,12 @@ function App() {
           if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
           } else {
-            window.alert("There aren't characters with this id!");
+            throw new Error("There aren't characters with this id!");
           }
         }
       }
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   }
 
