@@ -7,10 +7,10 @@ import "./about.css";
 const About = () => {
   return (
     <div className="about-container">
-      <div className="about-header">
+      <div>
         <div className="about-handcrafted">Handcrafted by</div>
-        <h1 className="about-name">Lucas Tamburlini</h1>
-        <h2 className="about-cohort">Cohorte: FT42a</h2>
+        <h1>Lucas Tamburlini</h1>
+        <h2>Cohorte: FT42a</h2>
       </div>
       <div className="about-content">
         <p className="about-intro">
@@ -26,7 +26,7 @@ const About = () => {
         </p>
       </div>
       <div className="about-closing">
-        <h2 className="about-closing-text">Wubba Lubba Dub Dub!</h2>
+        <h2>Wubba Lubba Dub Dub!</h2>
       </div>
       <div className="about-contact">
         <div className="contact-container">

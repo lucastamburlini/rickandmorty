@@ -79,7 +79,9 @@ function App() {
       const characterExists = characters.find(
         (character) => character.id === parseInt(id)
       );
-      if (!characterExists) {
+      if (characterExists) {
+        alert("The character already exists!");
+      } else {
         const response = await axios(
           `http://localhost:3001/rickandmorty/character/${id}`
         );
@@ -90,8 +92,6 @@ function App() {
           } else {
             window.alert("There aren't characters with this id!");
           }
-        } else {
-          alert("The character already exists!");
         }
       }
     } catch (error) {
@@ -141,7 +141,6 @@ function App() {
   }
 
   function handleClear() {
-    console.log("Clear button clicked");
     setCharacters([]);
   }
 
