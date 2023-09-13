@@ -25,15 +25,30 @@ describe("Route test", () => {
         })
     })
 
+    describe("GET /rickandmorty/login", () => {
+        it("Correct information: most return: { access: true }", async () => {
+            const { body } = await agent.get("/rickandmorty/login/?email=ejemplo@gmail.com&password=hola1234*")
+            expect(body.access).toEqual(true)
+        })
+        
+        it("Incorrect information: most return: { access: false }", async () => {
+            const { body } = await agent.get("/rickandmorty/login/?email=correoincorrecto@gmail.com&password=contraseniaincorrecta")
+            expect(body.access).toEqual(false)
+        })
+    })
+
+    describe("POST /rickandmorty/fav", () => {
+        it("", async () => {
+
+        })
+    })
+
+    describe("DELETE /rickandmorty/fav/:id", () => {
+        it("")
+    })
+
+
 })
 
-describe("GET /rickandmorty/login", () => {
-    it("Correct information: most return: { access: true }", async () => {
-        const { body } = await agent.get("/rickandmorty/login/?email=ejemplo@gmail.com&password=hola1234*")
-        expect(body.access).toEqual(true)
-    })
-    it("Incorrect information: most return: { access: false }", async () => {
-        const { body } = await agent.get("/rickandmorty/login/?email=correoincorrecto@gmail.com&password=contraseniaincorrecta")
-        expect(body.access).toEqual(false)
-    })
-})
+
+
