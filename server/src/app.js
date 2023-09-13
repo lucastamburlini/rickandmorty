@@ -1,11 +1,11 @@
 const express = require('express');
-const server = express();
+const app = express();
 const mainRouter = require("./routes/index")
 const morgan = require("morgan")
 
-server.use(express.json());
-server.use(morgan("dev"))
-server.use((req, res, next) => {
+app.use(express.json());
+app.use(morgan("dev"))
+app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header(
@@ -18,16 +18,16 @@ server.use((req, res, next) => {
     );
     next();
 });
-server.use("/rickandmorty", mainRouter);
+app.use("/rickandmorty", mainRouter);
 
-module.exports = server
+module.exports = app
 
 /* const http = require("http");
 const { getCharById } = require('./controllers/getCharById')
 
 
 http
-    .createServer((req, res) => {
+    .createapp((req, res) => {
         res.setHeader('Access-Control-Allow-Origin', '*');
 
 
