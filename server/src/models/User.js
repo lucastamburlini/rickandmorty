@@ -4,6 +4,7 @@ module.exports = (sequelize) => {
    sequelize.define('User', {
       id: {
          type: DataTypes.INTEGER,
+         allowNull: false,
          primaryKey: true,
       },
       email: {
@@ -14,6 +15,7 @@ module.exports = (sequelize) => {
       },
       password: {
          type: DataTypes.STRING,
+         allowNull: false,
       }
    }, { timestamps: false });
 };
