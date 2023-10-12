@@ -5,8 +5,8 @@ import "./form.css";
 
 const Form = ({ handleLogin }) => {
   const [userData, setUserData] = useState({
-    email: "",
-    password: "",
+    email: "prueba@gmail.com",
+    password: "p1234*",
   });
 
   const [errors, setErrors] = useState({
