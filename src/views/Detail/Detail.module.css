@@ -1,4 +1,4 @@
-.card-detail-container {
+.cardDetailContainer {
   width: 90%;
   height: auto;
   display: flex;
@@ -14,12 +14,12 @@
   gap: 20px;
 }
 
-.card-detail-container img {
+.cardDetailContainer img {
   width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-  .card-detail-container {
+  .cardDetailContainer {
     width: 70%;
     flex-direction: row;
     justify-content: space-around;
@@ -27,7 +27,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .card-detail-container {
+  .cardDetailContainer {
     width: 60%;
   }
 }

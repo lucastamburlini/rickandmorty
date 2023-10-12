@@ -1,4 +1,4 @@
-.about-container {
+.aboutContainer {
   background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: auto;
@@ -10,11 +10,11 @@
   border-radius: 5px;
 }
 
-.about-handcrafted {
+.aboutHandcrafted {
   font-style: italic;
 }
 
-.about-image {
+.aboutContent {
   width: 70%;
   height: 70%;
   margin: 40px auto 40px auto;
@@ -26,28 +26,28 @@
   text-align: center;
 }
 
-.about-image img {
+.aboutContent img {
   width: 70%;
 }
 
-.about-contact {
+.aboutContent {
   margin-top: 20px;
 }
 
-.contact-container ul {
+.contactContainer ul {
   list-style-type: none;
   padding: 0;
   display: flex;
   justify-content: center;
 }
 
-.contact-container li {
+.contactContainer li {
   display: flex;
   justify-content: c;
   align-items: center;
 }
 
-.contact-container a {
+.contactContainer a {
   text-decoration: none;
   padding: 10px;
   display: flex;
@@ -56,12 +56,12 @@
   transition: color 0.2s ease-out;
 }
 
-.contact-container a:hover {
+.contactContainer a:hover {
   color: var(--primary-color);
 }
 
 @media screen and (min-width: 768px) {
-  .about-content {
+  .aboutContact {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;

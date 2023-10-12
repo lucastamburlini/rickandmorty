@@ -1,7 +1,7 @@
-import "./Error.module.css";
+import style from "./Error.module.css";
 
 const Error = () => {
-  return <div className="error">Error 404</div>;
+  return <div className={style.error}>Error 404</div>;
 };
 
 export default Error;

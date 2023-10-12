@@ -2,34 +2,37 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 
-import "./About.module.css";
+import style from "./About.module.css";
 
 const About = () => {
   return (
-    <div className="about-container">
+    <div className={style.aboutContainer}>
       <div>
-        <div className="about-handcrafted">Handcrafted by</div>
+        <div className={style.aboutHandcrafted}>Handcrafted by</div>
         <h1>Lucas Tamburlini</h1>
         <h2>Cohorte: FT42a</h2>
       </div>
-      <div className="about-content">
-        <p className="about-intro">
+      <div className={style.aboutContent}>
+        <p>
           Welcome to my capstone project of the Henry Bootcamp. <br />
           In this project, I have created a website centered around the popular
           TV show Rick and Morty.
         </p>
-        <div className="about-image">
+        <div>
           <img src="../src/assets/rick_and_morty3.png" alt="Henry" />
         </div>
-        <p className="about-description">
-        On my website, you can explore the world of Rick Sanchez and Morty Smith. I&apos;ve used front-end and back-end development skills, including React, Node.js, and databases, to create a comprehensive experience. I hope you enjoy it as much as I enjoyed creating it!
+        <p>
+          On my website, you can explore the world of Rick Sanchez and Morty
+          Smith. I&apos;ve used front-end and back-end development skills,
+          including React, Node.js, and databases, to create a comprehensive
+          experience. I hope you enjoy it as much as I enjoyed creating it!
         </p>
       </div>
-      <div className="about-closing">
+      <div>
         <h2>Wubba Lubba Dub Dub!</h2>
       </div>
-      <div className="about-contact">
-        <div className="contact-container">
+      <div className={style.aboutContact}>
+        <div className={style.contactContainer}>
           <ul>
             <li>
               <a
