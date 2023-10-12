@@ -9,7 +9,7 @@ import Error from "./views/Error/Error";
 import Login from "./views/Login/Login";
 import Favorites from "./components/Favorites/Favorites";
 
-import "./App.css";
+import "./App.module.css";
 
 function App() {
   const [characters, setCharacters] = useState([]);

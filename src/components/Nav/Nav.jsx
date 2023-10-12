@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
 import SearchBar from "../SearchBar/SearchBar";
 
-import "./nav.css";
+import "./Nav.module.css";
 
 export const Nav = ({ onSearch, random, handleLogout, handleClear }) => {
   return (

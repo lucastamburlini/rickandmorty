@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Cards from "../Cards/Cards";
 import { filterCards, orderCards, resetFav } from "../../redux/actions/actions";
 
-import "./favorites.css";
+import "./Favorites.module.css";
 
 const Favorites = () => {
   const dispatch = useDispatch();

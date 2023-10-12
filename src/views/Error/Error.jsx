@@ -1,4 +1,4 @@
-import "./error.css";
+import "./Error.module.css";
 
 const Error = () => {
   return <div className="error">Error 404</div>;

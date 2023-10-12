@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { validation } from "../../helpers/validation";
 
-import "./form.css";
+import "./Form.module.css";
 
 const Form = ({ handleLogin }) => {
   const [userData, setUserData] = useState({

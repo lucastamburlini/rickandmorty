@@ -1,6 +1,6 @@
 import Form from "../../components/Form/Form";
 
-import './login.css'
+import './Login.module.css'
 
 const Login = ({ handleLogin }) => {
   return (
