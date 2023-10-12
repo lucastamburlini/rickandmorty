@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
-import "./card.css";
+import "./Card.css";
 
 export default function Card({ character, onClose }) {
   const navigate = useNavigate();
