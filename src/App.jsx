@@ -36,16 +36,6 @@ function App() {
     }
   }
 
-  /*   function handleLogin(userData) {
-    const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/login/";
-    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-      const { access } = data;
-      setAccess(access);
-      access && navigate("/home");
-    });
-  } */
-
   function handleLogout() {
     setAccess(false);
     navigate("/");
@@ -83,7 +73,7 @@ function App() {
         alert("The character already exists!");
       } else {
         const response = await axios(
-          `http://localhost:3001/rickandmorty/character/${id}`
+          `/rickandmorty/character/${id}`
         );
         const { data } = response;
         if (data) {
@@ -98,27 +88,6 @@ function App() {
       alert(error);
     }
   }
-
-  /* function onSearch(id) {
-    const characterExists = characters.find(
-      (character) => character.id === parseInt(id)
-    );
-    // `https://rym2-production.up.railway.app/api/character/${id}?key=henrym-lucastamburlini`
-
-    if (!characterExists) {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-        ({ data }) => {
-          if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
-          } else {
-            window.alert("There aren't characters with this id!");
-          }
-        }
-      );
-    } else {
-      alert("The character already exists!");
-    }
-  } */
 
   function onClose(id) {
     let borrar = characters.filter((character) => {
