@@ -3,12 +3,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  height: auto;
+  padding: 20px 0;
+}
+
+@media screen and (max-width: 512px) {
+  .container {
+    min-height: 450px;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav a {
+    margin: 10px 0;
+  }
 }
 
 .nav {
   display: flex;
   width: 100%;
-  height: 100px;
+  height: auto;
   background-color: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
@@ -18,12 +34,12 @@
   width: 50px;
 }
 
-
 .nav a {
   font-family: var(--main-font);
   color: var(--secondary-color);
   text-decoration: none;
   transition: all 0.2s ease-out;
+  font-size: 22px;
 }
 
 .nav a:hover {
@@ -38,6 +54,11 @@
   color: var(--warning-color);
   cursor: pointer;
   transition: all 0.2s ease-out;
+}
+@media screen and (max-width: 512px) {
+  .LogoutIcon {
+    margin-top: 10px;
+  }
 }
 
 .LogoutIcon:hover {

@@ -2,13 +2,14 @@
   display: flex;
   gap: 5px;
   height: 40px;
+  padding: 20px 0;
 }
 
 .search input {
+  width: 105px;
   height: 40px;
   padding: 0 10px;
   border: 1px solid var(--secondary-color);
   border-radius: 5px;
   outline: none;
 }
-

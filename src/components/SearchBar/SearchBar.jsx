@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import style from "./SearchBar.module.css";
-import '../../App.module.css';
+import appStyle from '../../App.module.css';
 
 export default function SearchBar({ onSearch, random, handleClear }) {
   const [id, setId] = useState("");
@@ -23,7 +23,7 @@ export default function SearchBar({ onSearch, random, handleClear }) {
         </div>
         <div>
           <button
-            className={style.button}
+            className={appStyle.button}
             onClick={() => {
               onSearch(id);
             }}
@@ -32,12 +32,12 @@ export default function SearchBar({ onSearch, random, handleClear }) {
           </button>
         </div>
         <div>
-          <button className={style.button} onClick={random}>
+          <button className={appStyle.button} onClick={random}>
             Random
           </button>
         </div>
         <div>
-          <button className={style.button} onClick={handleClear}>
+          <button className={appStyle.button} onClick={handleClear}>
             Clear
           </button>
         </div>

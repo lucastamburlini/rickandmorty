@@ -35,7 +35,7 @@ body {
 
 .button {
   height: 40px;
-  padding: 0 15px;
+  padding: 0 7px;
   background-color: var(--secondary-color);
   color: white;
   border: none;

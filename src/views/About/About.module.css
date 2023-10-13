@@ -5,7 +5,7 @@
   color: var(--main-text-color);
   text-align: center;
   width: 80%;
-  margin: 90px auto 20px auto;
+  margin: 32px auto auto auto;
   padding: 20px;
   border-radius: 5px;
 }
@@ -15,15 +15,13 @@
 }
 
 .aboutContent {
-  width: 70%;
+  width: 90%;
   height: 70%;
   margin: 40px auto 40px auto;
   border-radius: 10px;
-
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  text-align: center;
 }
 
 .aboutContent img {
@@ -32,6 +30,13 @@
 
 .aboutContent {
   margin-top: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .aboutContent {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .contactContainer ul {
@@ -60,11 +65,3 @@
   color: var(--primary-color);
 }
 
-@media screen and (min-width: 768px) {
-  .aboutContact {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    text-align: center;
-  }
-}
