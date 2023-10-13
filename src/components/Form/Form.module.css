@@ -35,7 +35,7 @@
   font-weight: bold;
 }
 
-.button-gradient {
+.buttonGradient {
   min-width: 120px;
   height: 40px;
   color: #fff;
@@ -51,10 +51,10 @@
   background-size: 120% auto;
   background-image: linear-gradient(315deg, #43cea2 0%, #185a9d 75%);
 }
-.button-gradient:hover {
+.buttonGradient:hover {
   background-position: right center;
 }
-.button-gradient:active {
+.buttonGradient:active {
   top: 2px;
 }
 

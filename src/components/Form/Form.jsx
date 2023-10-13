@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { validation } from "../../helpers/validation";
 
-import "./Form.module.css";
+import style from "./Form.module.css";
 
 const Form = ({ handleLogin }) => {
   const [userData, setUserData] = useState({
@@ -36,7 +36,7 @@ const Form = ({ handleLogin }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form">
+    <form onSubmit={handleSubmit} className={style.form}>
          <img src="./src/assets/rick_and_morty.png" alt="rick_and_morty" />
       <label>Email</label>
       <input
@@ -45,7 +45,7 @@ const Form = ({ handleLogin }) => {
         onChange={handleChange}
         value={userData.email}
       />
-      <div className="warning">
+      <div className={style.warning}>
         <span>{errors.email}</span>
       </div>
       <label>Password</label>
@@ -55,10 +55,10 @@ const Form = ({ handleLogin }) => {
         onChange={handleChange}
         value={userData.password}
       />
-      <div className="warning">
+      <div className={style.warning}>
         <span>{errors.password}</span>
       </div>
-      <button className="button-gradient" type="submit">Submit</button>
+      <button className={style.buttonGradient} type="submit">Submit</button>
     </form>
   );
 };
