@@ -7,8 +7,8 @@ import axios from "axios";
 
 import App from "./App.jsx";
 
-axios.defaults.baseURL = "http://localhost:3001";
-// axios.defaults.baseURL = "https://rickandmorty-api-production-e3c7.up.railway.app";
+// axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "https://rickandmorty-m7meyexe2-lucastamburlini.vercel.app/";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
