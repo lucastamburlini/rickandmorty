@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
 import SearchBar from "../SearchBar/SearchBar";
+import image1 from '../../assets/rick_and_morty1.png'
 
 import style from "./Nav.module.css";
 
@@ -9,7 +10,7 @@ export const Nav = ({ onSearch, random, handleLogout, handleClear }) => {
     <div className={style.nav}>
       <div className={style.container}>
         <NavLink to="/home">
-          <img src="./src/assets/rick_and_morty1.png" alt="rick_and_morty" />
+          <img src={image1} alt="rick_and_morty" />
         </NavLink>
         <NavLink to="/home">Home</NavLink>
         <NavLink to="/about">About</NavLink>

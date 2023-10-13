@@ -10,7 +10,7 @@ const Detail = () => {
 
   useEffect(() => {
     //`https://rym2-production.up.railway.app/api/character/${id}?key=henrym-lucastamburlini`
-    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
+    axios(`/rickandmorty/character/${id}`).then(
       ({ data }) => {
         if (data.name) {
           setCharacter(data);
