@@ -23,22 +23,22 @@
   object-fit: cover;
 }
 
-.card-info {
+.cardInfo {
   height: 100%;
   padding: 8px 16px;
   display: grid;
   grid-template-rows: 40% 30% 30%;
 }
 
-.card-info h2 {
+.cardInfo h2 {
   margin: 0;
 }
 
-.card-info p {
+.cardInfo p {
   margin: 0;
 }
 
-.card-info button {
+.cardInfo button {
   font-size: 13px;
   display: flex;
   justify-content: center;
@@ -53,28 +53,28 @@
   cursor: pointer;
 }
 
-.card-info button:hover {
+.cardInfo button:hover {
   color: var(--primary-color);
   transition: all 0.3s ease;
 }
 
-.card-info button svg {
+.cardInfo button svg {
   width: 20px;
   padding-left: 5px;
   transform: translateX(0);
   transition: transform 0.3s ease;
 }
 
-.card-info button:hover svg {
+.cardInfo button:hover svg {
   transform: translateX(5px);
 }
 
-.card-footer {
+.cardFooter {
   display: flex;
   justify-content: space-between;
 }
 
-.close-botton {
+.closeBotton {
   height: 24px;
   width: 24px;
   display: flex;
@@ -91,7 +91,7 @@
   cursor: pointer;
 }
 
-.close-botton:hover {
+.closeBotton:hover {
   color: var(--warning-color);
   transform: scale(1.1, 1.1);
 }

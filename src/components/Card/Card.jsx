@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
-import "./Card.module.css";
+import style from "./Card.module.css";
 
 export default function Card({ character, onClose }) {
   const navigate = useNavigate();
@@ -49,10 +49,10 @@ export default function Card({ character, onClose }) {
   }, [favorites]); */
 
   return (
-    <div className="card">
+    <div className={style.card}>
       {closeBtn && (
         <button
-          className="close-botton"
+          className={style.closeBotton}
           onClick={() => {
             onClose(character.id);
           }}
@@ -64,7 +64,7 @@ export default function Card({ character, onClose }) {
       <div>
         <img src={character.image} alt={character.name} />
       </div>
-      <div className="card-info">
+      <div className={style.cardInfo}>
         <div>
           <h2>{character.name}</h2>
         </div>
@@ -72,7 +72,7 @@ export default function Card({ character, onClose }) {
           <p>Gender: {character.gender}</p>
           <p>Species: {character.species}</p>
         </div>
-        <div className="card-footer">
+        <div className={style.cardFooter}>
           <button onClick={navigateHandle}>
             Details <KeyboardDoubleArrowRightIcon />
           </button>

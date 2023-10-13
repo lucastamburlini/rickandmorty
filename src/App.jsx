@@ -9,7 +9,7 @@ import Error from "./views/Error/Error";
 import Login from "./views/Login/Login";
 import Favorites from "./components/Favorites/Favorites";
 
-import "./App.module.css";
+import style from "./App.module.css";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -21,7 +21,7 @@ function App() {
   async function handleLogin(userData) {
     try {
       const { email, password } = userData;
-      const URL = "http://localhost:3001/rickandmorty/login/";
+      const URL = "/rickandmorty/login/";
       const response = await axios(
         URL + `?email=${email}&password=${password}`
       );
@@ -145,7 +145,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={style.app}>
       {location.pathname !== "/" && (
         <Nav
           onSearch={onSearch}
